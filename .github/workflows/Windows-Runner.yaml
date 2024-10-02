@@ -1,0 +1,31 @@
+name: Simple Windows Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up PowerShell
+        run: |
+          Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
+        shell: powershell
+
+      - name: Run PowerShell script
+        run: |
+          Write-Output "Hello from GitHub Actions on Windows!"
+        shell: powershell
+
+      - name: Run a command
+        run: |
+          echo "This is a simple command running on Windows runner."

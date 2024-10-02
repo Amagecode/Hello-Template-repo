@@ -1,0 +1,17 @@
+name: 01 - Building Blocks
+on: push
+jobs:
+    echo-hello:
+        runs-on: self-hosted
+        steps: 
+         - name: Hello GitHub-Action
+           run: echo "Hello GitHub-operation Shashi"
+    echo-goodboye:
+        runs-on: self-hosted
+        steps:
+            - name: Successfully Execute job
+              run: |
+               echo "i will be exectuted Sucessfully"
+               exit 0
+            - name: GoodBoye-github action 
+              run: echo "GoodBoye-github"
